@@ -27,7 +27,7 @@ export default function Home() {
 
     return (
         <>
-            <div id="cardContainer" className='flex flex-wrap justify-center items-center p-24  gap-8 h-full'>
+            <div id="cardContainer" className='flex flex-wrap justify-center items-center p-24 gap-8 h-full'>
             <div className="w-full sm:w-1/3 mb-8">
                 <a href="https://app.contentful.com/spaces/ax4gd2bd41ec/views/entries"><div className="bg-neutral-200 rounded-xl p-4 flex flex-col gap-1 hover:bg-neutral-300 hover:scale-110 transition active:scale-90 active:border-2">
                     <img className='rounded-xl w-full aspect-video' src='/add.webp'/>

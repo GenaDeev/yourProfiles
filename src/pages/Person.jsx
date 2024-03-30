@@ -50,7 +50,7 @@ export default function Person() {
                     <p className='font-semibold text-xl'>Age: <span className='font-normal'>{user.fields.age}</span></p>
                 </div>
             </div>
-            <p className='max-w-[700px] sm:p-0 sm:py-4 p-12'>{user.fields.sum}</p>
+            <p className='max-w-[700px] sm:p-0 sm:py-4 px-12'>{user.fields.sum}</p>
         </>
     );
 }
