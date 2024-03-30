@@ -1,0 +1,16 @@
+{
+    "name": "Your Profiles",
+    "short_name": "Your Profiles",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#e5e5e5",
+    "icons": [
+      {
+        "src": "/192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      }
+    ]
+  }
+  
