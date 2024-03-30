@@ -18,11 +18,19 @@ export default function Person() {
             .then(entry => {
                 setUser(entry);
                 setLoading(false);
+                // Update document title
+                document.title = `${entry.fields.fullname} - Profile - YourProfiles`;
             })
             .catch(error => {
                 console.error('Error fetching entry:', error);
                 setLoading(false);
             });
+
+        // Cleanup function
+        return () => {
+            // Reset document title
+            document.title = "YourProfiles - a simple page where users can add people to it";
+        };
     }, [id]);
 
     if (loading) {
