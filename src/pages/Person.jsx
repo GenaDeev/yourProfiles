@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import * as contentful from 'contentful';
 import NotFound from '../pages/404';
 
 export default function Person() {
@@ -9,26 +8,33 @@ export default function Person() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const client = contentful.createClient({
-            space: 'ax4gd2bd41ec',
-            accessToken: 'E99M7-BkMDjDoqV_1Wkeirbk-8QKeNRJ6c9_GcPIK3w'
-        });
-
-        client.getEntry(id)
-            .then(entry => {
-                setUser(entry);
+        // Haciendo una solicitud a tu API
+        fetch(`https://ff5b2742-2b8c-419c-b1d8-6b7380c86b06-00-3h30on4e3axhb.worf.replit.dev/api/persons`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const foundUser = data.find(person => person.id === id);
+                if (foundUser) {
+                    setUser(foundUser);
+                    // Actualizando el título del documento
+                    document.title = `${foundUser.name} - Profile - YourProfiles`;
+                } else {
+                    throw new Error('User not found');
+                }
                 setLoading(false);
-                // Update document title
-                document.title = `${entry.fields.fullname} - Profile - YourProfiles`;
             })
             .catch(error => {
-                console.error('Error fetching entry:', error);
+                console.error('Error fetching user:', error);
                 setLoading(false);
             });
 
-        // Cleanup function
+        // Función de limpieza
         return () => {
-            // Reset document title
+            // Restablecer el título del documento
             document.title = "YourProfiles - a simple page where users can add people to it";
         };
     }, [id]);
@@ -44,13 +50,13 @@ export default function Person() {
     return (
         <>
             <div className='p-16 flex sm:flex-row flex-col items-center gap-6 justify-between'>
-                <img className='w-96 aspect-video rounded-xl' src={user.fields.img.fields.file.url} alt={user.fields.img.fields.title} />
+                <img className='w-96 aspect-video rounded-xl' src={user.img} alt={user.name} />
                 <div id="text" className='flex flex-col gap-4'>
-                    <p className='font-bold text-2xl'>Name: <span className='font-normal'>{user.fields.fullname}</span></p>
-                    <p className='font-semibold text-xl'>Age: <span className='font-normal'>{user.fields.age}</span></p>
+                    <p className='font-bold text-2xl'>Name: <span className='font-normal'>{user.name}</span></p>
+                    <p className='font-semibold text-xl'>Age: <span className='font-normal'>{user.age}</span></p>
                 </div>
             </div>
-            <p className='max-w-[700px] sm:p-0 sm:py-4 px-12'>{user.fields.sum}</p>
+            <p className='max-w-[700px] sm:p-0 sm:py-4 px-12'>{user.sum}</p>
         </>
     );
 }

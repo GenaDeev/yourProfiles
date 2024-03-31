@@ -4,6 +4,7 @@ import HomePage from './pages/Home';
 import PersonPage from './pages/Person';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import SubmitPage from './pages/Submit'
 
 const pageVariants = {
   initial: {
@@ -40,6 +41,22 @@ export default function App() {
                   variants={pageVariants}
                 >
                   <HomePage />
+                </motion.div>
+              </AnimatePresence>
+            }
+          />
+           <Route
+            path="/submit"
+            element={
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key="person"
+                  initial="initial"
+                  animate="enter"
+                  exit="exit"
+                  variants={pageVariants}
+                >
+                  <SubmitPage/>
                 </motion.div>
               </AnimatePresence>
             }
