@@ -9,7 +9,7 @@ export default function Home() {
         // Función para obtener los datos de la API
         const fetchData = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:3000/api/persons');
+                const response = await fetch('https://ubiquitous-neighborly-waiter.glitch.me/api/persons');
                 if (!response.ok) {
                     throw new Error('Failed to fetch data');
                 }

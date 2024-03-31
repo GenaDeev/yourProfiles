@@ -47,7 +47,7 @@ export default function Home() {
         };
         
         try {
-            const response = await fetch('http://127.0.0.1:3000/api/persons', {
+            const response = await fetch('https://ubiquitous-neighborly-waiter.glitch.me/api/persons', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

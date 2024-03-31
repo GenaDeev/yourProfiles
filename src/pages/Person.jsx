@@ -9,7 +9,7 @@ export default function Person() {
 
     useEffect(() => {
         // Haciendo una solicitud a tu API
-        fetch(`https://ff5b2742-2b8c-419c-b1d8-6b7380c86b06-00-3h30on4e3axhb.worf.replit.dev/api/persons`)
+        fetch(`https://ubiquitous-neighborly-waiter.glitch.me/api/persons`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
