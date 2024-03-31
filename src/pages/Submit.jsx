@@ -47,7 +47,7 @@ export default function Home() {
         };
         
         try {
-            const response = await fetch('https://ff5b2742-2b8c-419c-b1d8-6b7380c86b06-00-3h30on4e3axhb.worf.replit.dev/api/persons', {
+            const response = await fetch('http://127.0.0.1:3000/api/persons', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
