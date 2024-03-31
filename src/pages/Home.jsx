@@ -30,7 +30,7 @@ export default function Home() {
                 <div className="w-full sm:w-1/3 mb-8">
                     <Link to="/submit">
                         <div className="bg-neutral-200 rounded-xl p-4 flex flex-col gap-1 hover:bg-neutral-300 hover:scale-110 transition active:scale-90 active:border-2">
-                            <img className='rounded-xl w-full aspect-video' src='/add.webp'/>
+                            <img className='rounded-xl w-full aspect-video' src='/add.webp' />
                             <h1 className='font-bold text-xl'>Add new</h1>
                             <p>Add a person to the wall</p>
                         </div>
