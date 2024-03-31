@@ -42,7 +42,7 @@ export default function Home() {
                             username={user.fields.fullname}
                             userage={user.fields.age}
                             userimg={user.fields.img.fields.file.url}
-                            userimgalt={user.fields.img.fields.file.title}
+                            userimgalt={user.fields.img.fields.title}
                         />
                     </div>
                 ))}
