@@ -9,7 +9,7 @@ export default function Person() {
 
     useEffect(() => {
         // Haciendo una solicitud a tu API
-        fetch(`https://ubiquitous-neighborly-waiter.glitch.me/api/persons`)
+        fetch(`https://filehost.comidolar.com.ar:3000/api/persons/`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
